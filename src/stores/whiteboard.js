@@ -30,7 +30,7 @@ export const useWhiteboardStore = defineStore('whiteboard', {
   actions: {
     initializeSocket() {
       if (!this.socket) {
-        this.socket = io('http://localhost:4200', {
+        this.socket = io('https://pizarrabackend3-production.up.railway.app/', {
           autoConnect: true,
           reconnection: true
         })
@@ -100,7 +100,7 @@ export const useWhiteboardStore = defineStore('whiteboard', {
 
       try {
         const authStore = useAuthStore()
-        const response = await axios.get('http://localhost:4200/api/rooms', {
+        const response = await axios.get('https://pizarrabackend3-production.up.railway.app/api/rooms', {
           headers: {
             Authorization: `Bearer ${authStore.getToken}`
           }
@@ -120,7 +120,7 @@ export const useWhiteboardStore = defineStore('whiteboard', {
       this.error = null
         try {
            const authStore = useAuthStore()
-           const response = await axios.get(`http://localhost:4200/api/rooms/${roomId}/invite-code`,
+           const response = await axios.get(`https://pizarrabackend3-production.up.railway.app/api/rooms/${roomId}/invite-code`,
              {
                headers: {
                  Authorization: `Bearer ${authStore.getToken}`
@@ -143,7 +143,7 @@ export const useWhiteboardStore = defineStore('whiteboard', {
 
       try {
         const authStore = useAuthStore()
-        const response = await axios.post('http://localhost:4200/api/rooms', 
+        const response = await axios.post('https://pizarrabackend3-production.up.railway.app/api/rooms',
           { name },
           {
             headers: {
@@ -167,7 +167,7 @@ export const useWhiteboardStore = defineStore('whiteboard', {
 
       try {
         const authStore = useAuthStore()
-        const response = await axios.post('http://localhost:4200/api/rooms/join', 
+        const response = await axios.post('https://pizarrabackend3-production.up.railway.app/api/rooms/join',
           { inviteCode },
           {
             headers: {
@@ -191,7 +191,7 @@ export const useWhiteboardStore = defineStore('whiteboard', {
 
       try {
         const authStore = useAuthStore()
-        const response = await axios.get(`http://localhost:4200/api/rooms/${roomId}/whiteboard`, {
+        const response = await axios.get(`https://pizarrabackend3-production.up.railway.app/api/rooms/${roomId}/whiteboard`, {
           headers: {
             Authorization: `Bearer ${authStore.getToken}`
           }

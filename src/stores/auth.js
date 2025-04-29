@@ -23,7 +23,7 @@ export const useAuthStore = defineStore('auth', {
       this.error = null
 
       try {
-        const response = await axios.post('http://localhost:4200/api/register', {
+        const response = await axios.post('https://pizarrabackend3-production.up.railway.app/api/register', {
           username,
           email,
           password
@@ -43,7 +43,7 @@ export const useAuthStore = defineStore('auth', {
       this.error = null
 
       try {
-        const response = await axios.post('http://localhost:4200/api/login', {
+        const response = await axios.post('https://pizarrabackend3-production.up.railway.app/api/login', {
           email,
           password
         })

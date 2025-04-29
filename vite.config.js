@@ -13,11 +13,11 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:4200',
+        target: 'https://pizarrabackend3-production.up.railway.app/',
         changeOrigin: true
       },
       '/socket.io': {
-        target: 'http://localhost:4200',
+        target: 'https://pizarrabackend3-production.up.railway.app/',
         changeOrigin: true,
         ws: true
       }
